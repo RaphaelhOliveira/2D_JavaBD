@@ -5,6 +5,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Meu Site</title>
     <link rel="stylesheet" type="text/css" href="index.css">
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var formulario = document.getElementById("meuFormulario");
+            var tabela1 = document.getElementById("tabela1");
+            var tabela2 = document.getElementById("tabela2");
+
+            formulario.addEventListener("submit", function(event) {
+                event.preventDefault(); // Evita o comportamento padrão de envio do formulário
+
+                var nome = document.getElementById("texto1").value;
+                var cpf = document.getElementById("numero1").value;
+                var bio = document.getElementById("dataNascimento").value;
+                var genero = document.getElementById("texto5").value;
+                var email = document.getElementById("texto2").value;
+                var endereco = document.getElementById("texto3").value;
+                var telefone = document.getElementById("numero2").value;
+                var responsavel = document.getElementById("texto6").value;
+
+                // Adiciona uma nova linha na tabela 1 com os dados do formulário
+                var novaLinhaTabela1 = tabela1.insertRow();
+                novaLinhaTabela1.innerHTML = "<td>" + nome + "</td><td>" + cpf + "</td><td>" + bio + "</td><td>" + genero + "</td>";
+
+                // Adiciona uma nova linha na tabela 2 com os dados do formulário
+                var novaLinhaTabela2 = tabela2.insertRow();
+                novaLinhaTabela2.innerHTML = "<td>" + email + "</td><td>" + endereco + "</td><td>" + telefone + "</td><td>" + responsavel + "</td>";
+            });
+        });
+    </script>
 </head>
 <body>
     <h1>Meu Site</h1>
@@ -78,7 +106,7 @@
         </div>
     </form>
 
-    <!-- Se precisar de scripts JavaScript para interatividade, adicione-os aqui -->
+    <!-- Se precisar de mais scripts JavaScript para interatividade, adicione-os aqui -->
 
 </body>
 </html>
